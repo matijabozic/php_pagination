@@ -41,7 +41,7 @@ To get pagination information you use this method:
 <pre>
 $pagination->getPaginationInfo();
 </pre>
-This would return PHP array, holding information about pagination. Its joust array holding page numbers really, following array keys are available:
+This would return PHP array, holding information about pagination. Its just array holding page numbers really, following array keys are available:
 <pre>
 pageCurrent - prints current page number
 pageNext    - prints next page number
@@ -85,11 +85,11 @@ public function post($request)
 	// And lets set number of links before and after current page to 5
 	$links = 5;
 	
-	// Lets also fetch posts from database, joust to make this example complete
+	// Lets also fetch posts from database, just to make this example complete
 	$offset = ($page - 1) * $limit;	
 	$posts = $orm->getRepository('\Models\Entities\Post')->findBy(array(), array(), $limit, $offset);
 	
-	// Now lets instanciate our Pagination class with defined variables
+	// Now lets instantiate our Pagination class with defined variables
 	$pagination = new \Core\Pagination\Pagination($page, $limit, $items, $links);
 	
 	// And ask for pagination information
@@ -182,7 +182,7 @@ And then use this code in your Twig template:
 
 This example is done in my MVC framework. But you should get the point.
 <code>$request->get('id');</code>
-is joust a way I retrive $_GET variables through my HTTP Request object. You can 
+is just a way I retrive $_GET variables through my HTTP Request object. You can 
 use $_GET or Symfony HTTP Request object if you use Symfony2 or anything else.
 Also, if you want to use this class in your environment, you should change namespace
 and register autoloading, but if you are reading this, I know you are smart enough
