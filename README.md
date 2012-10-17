@@ -1,16 +1,13 @@
-# About #
+## About ##
 
 Pagination is simple class that enables you to paginate arbitrary content. I built this class for my custome PHP MVC framework, but it can be used with other frameworks. I use Twig as template engine, and Doctrine ORM as relation data mapper. Framework is very similar to Symfony2, so you can easily implement this class there, or in any other framework really.
 
-----------
-
-# The Goal #
+## The Goal ##
 
 The goal of this class is not to build and return formated HTML tags that represent Pagination like other Pagination classes do. The idea is to use this class to get information about current page, pages around current page, next and back page number etc. Then you can give that information to Twig, and use Twig to add HTML tags, implement your presentation logic and build any type of pagination you want. These informations are nothing more then page numbers. I strongly belive that HTML tags belong to view layer and view layer only! And with this class we can achive that.
 
-----------
 
-# Usage #
+## Usage ##
 
 Paginate class works with four arguments. Three are required, and last one is optional.
 
@@ -58,9 +55,7 @@ pagesLimit  - prints number of items shown per page
 itemsTotal  - prints total number of items
 </pre>
 
-----------
-
-# Example #
+## Example ##
 
 Lets say we are working on a blog, and want to show 5 blog posts per page plus pagination. The URL for this route would be this:
 
@@ -193,9 +188,7 @@ Also, if you want to use this class in your environment, you should change names
 and register autoloading, but if you are reading this, I know you are smart enough
 to do it yourself.
 
-----------
-
-# Things to note about pageNext and pageBack #
+## Things to note about pageNext and pageBack ##
 
 pageNext and pageBack will be available only if there is a need for Next and
 Back links. For example, if currentPage is 1, there can't be back button 
@@ -215,9 +208,7 @@ or
 {% endif %}
 `````
 
-----------
-
-#Things to note about pagesNext and pagesBack#
+## Things to note about pagesNext and pagesBack ##
 
 When using pagesBack and pagesNext be aware that these two are arrays.
 They hold numbers of pages before currentPage and after currentPage.
@@ -227,9 +218,7 @@ or less if less pages exist. For example, if you have 10 pages total, your curre
 page is 7, and you set links to 5, pagesNext would hold 8, 9 and 10 since 10 is last page.
 The same logic goes for pagesBack.
 
-----------
-
-# Future development #
+## Future development ##
 
 Im pretty satisfied with how this works. Im thinking about adding pagesAll key that
 would hold pagesBack + pageCurrent + pagesNext, so you could print all pages with
